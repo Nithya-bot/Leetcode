@@ -1,0 +1,4 @@
+Delete p from Person p
+join Person s on
+p.email=s.email and
+p.id>s.id;
