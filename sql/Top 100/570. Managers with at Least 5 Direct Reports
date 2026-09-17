@@ -1,0 +1,12 @@
+/* Select e.name from Employee e join
+(
+select managerId, count(*)
+from Employee 
+group by managerId
+having count(*)>=5
+) m
+on m.managerId = e.id; */
+
+Select m.name from Employee e inner join Employee m
+on e.managerId = m.id group by m.id,m.name
+having count(m.id)>=5
