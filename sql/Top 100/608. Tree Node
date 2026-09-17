@@ -1,0 +1,8 @@
+SELECT
+    id,
+    CASE
+        WHEN p_id is null THEN 'Root' 
+        WHEN id in (Select p_id from Tree) then 'Inner'
+        ELSE 'Leaf'
+    END AS type
+FROM Tree;
